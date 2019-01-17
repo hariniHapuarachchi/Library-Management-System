@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<AnchorPane fx:id="apReturnPage" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep.controller.ReturnBookController">
+
+    <children>
+      <ImageView fitHeight="316.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/CsB6M5VWgAA8s0K.jpg" />
+         </image>
+      </ImageView>
+        <Label layoutX="25.0" layoutY="37.0" text="Return Book">
+            <font>
+                <Font size="19.0" />
+            </font>
+        </Label>
+        <Label layoutX="43.0" layoutY="78.0" text="Return ID : " />
+        <Label layoutX="43.0" layoutY="115.0" text="Book ID : " />
+        <Label layoutX="43.0" layoutY="156.0" text="Member ID :" />
+        <Label layoutX="43.0" layoutY="192.0" text="Expired Date : " />
+        <Label layoutX="43.0" layoutY="227.0" text="Return Date" />
+        <Label layoutX="43.0" layoutY="265.0" text="Status : " />
+        <TextField fx:id="returnID" layoutX="142.0" layoutY="62.0" onKeyPressed="#setOnKeyEnterForReturns" prefHeight="26.0" prefWidth="276.0" promptText="press enter" />
+        <TextField fx:id="returnBook" layoutX="142.0" layoutY="102.0" prefHeight="26.0" prefWidth="276.0" promptText="Book ID" />
+        <TextField fx:id="returnDate" layoutX="142.0" layoutY="212.0" prefHeight="26.0" prefWidth="276.0" promptText="Return Date" />
+        <TextField fx:id="returnExpire" layoutX="142.0" layoutY="179.0" prefHeight="26.0" prefWidth="276.0" promptText="Expired Date" />
+        <TextField fx:id="returnMember" layoutX="142.0" layoutY="141.0" prefHeight="26.0" prefWidth="276.0" promptText="Member ID" />
+        <Button layoutX="460.0" layoutY="225.0" mnemonicParsing="false" onAction="#CalcReturnsFine" prefHeight="26.0" prefWidth="122.0" text="Calculate Fine" />
+        <Button fx:id="btn_fine" layoutX="460.0" layoutY="260.0" mnemonicParsing="false" onAction="#deleteReturns" prefHeight="26.0" prefWidth="122.0" text="Return" />
+        <Button layoutX="419.0" layoutY="26.0" onAction="#homeFromReturn" prefHeight="26.0" prefWidth="82.0" text="Home" />
+        <Button layoutX="151.0" layoutY="26.0" mnemonicParsing="false" onAction="#newReturn" prefHeight="26.0" prefWidth="106.0" text="New Return" />
+      <ComboBox fx:id="returnStatus" layoutX="141.0" layoutY="260.0" prefHeight="26.0" prefWidth="276.0">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="RETURNED" />
+                <String fx:value="NOT RETURNED" />
+            </FXCollections>
+        </items>
+      </ComboBox>
+    </children>
+
+</AnchorPane>

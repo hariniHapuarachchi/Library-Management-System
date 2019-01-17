@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="apMember" prefHeight="624.0" prefWidth="600.0" style="-fx-background-color: a8a6a6;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.dep.controller.RegisterMemberController">
+   <children>
+      <ImageView fitHeight="479.0" fitWidth="610.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Enrollment.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="156.0" layoutY="35.0" prefHeight="30.0" prefWidth="258.0" text="   Register Member">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="48.0" layoutY="104.0" text="ID" />
+      <Label layoutX="47.0" layoutY="151.0" text="Name" />
+      <Label layoutX="48.0" layoutY="201.0" text="Address" />
+      <Label layoutX="50.0" layoutY="249.0" text="Mobile" />
+      <Label layoutX="48.0" layoutY="352.0" text="Type" />
+      <TextField fx:id="memberID" layoutX="126.0" layoutY="97.0" prefHeight="26.0" prefWidth="321.0" promptText="Member ID" />
+      <TextField fx:id="memberName" layoutX="125.0" layoutY="144.0" prefHeight="26.0" prefWidth="321.0" promptText="Name" />
+      <TextField fx:id="memberAddress" layoutX="124.0" layoutY="193.0" prefHeight="26.0" prefWidth="328.0" promptText="Address" />
+      <TextField fx:id="memberMobile" layoutX="123.0" layoutY="243.0" prefHeight="26.0" prefWidth="328.0" promptText="xxx-xxxxxxx" />
+         <ComboBox fx:id="memberType" layoutX="121.0" layoutY="348.0" prefHeight="26.0" prefWidth="328.0">
+            <items>
+               <FXCollections fx:factory="observableArrayList">
+                   <String fx:value="Staff" />
+                  <String fx:value="Student" />
+               </FXCollections>
+            </items>
+         </ComboBox>
+
+      <Button layoutX="443.0" layoutY="39.0" onAction="#homeFromMember" text="Home" />
+      <Button layoutX="31.0" layoutY="38.0" onAction="#newMember" text="New Member" />
+      <Button layoutX="164.0" layoutY="399.0" mnemonicParsing="false" onAction="#registerMember" prefHeight="26.0" prefWidth="81.0" text="Register" />
+      <Button layoutX="284.0" layoutY="399.0" mnemonicParsing="false" onAction="#deleteMember" prefHeight="26.0" prefWidth="81.0" text="Delete" />
+      <TableView fx:id="memberTable" layoutX="21.0" layoutY="436.0" prefHeight="164.0" prefWidth="579.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="ID" />
+          <TableColumn prefWidth="93.0" text="Name" />
+            <TableColumn prefWidth="111.0" text="Address" />
+            <TableColumn prefWidth="115.0" text="Mobile" />
+            <TableColumn prefWidth="95.0" text="NIC" />
+            <TableColumn prefWidth="130.0" text="Type" />
+        </columns>
+      </TableView>
+      <Label layoutX="46.0" layoutY="304.0" text="NIC :" />
+      <TextField fx:id="memberNIC" layoutX="122.0" layoutY="301.0" prefHeight="26.0" prefWidth="328.0" promptText="xxxxxxxxxV/v" />
+   </children>
+</AnchorPane>
