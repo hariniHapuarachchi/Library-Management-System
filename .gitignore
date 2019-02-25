@@ -1,3 +1,4 @@
+.gitignore
 .idea/**
 error.log
 error.log.1
